@@ -1,0 +1,30 @@
+--create a grocery store database.
+
+CREATE TABLE golfsters (id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, location TEXT, quantity INTEGER);
+
+INSERT INTO golfsters VALUES (1, "Putter", 40, "Boston", 5);
+INSERT INTO golfsters VALUES (2, "Driver", 600, "Chicago", 1);
+INSERT INTO golfsters VALUES (3, "Approach Wedge", 55, "Seattle", 3);
+INSERT INTO golfsters VALUES (4, "Hybrids", 10, "Austin", 7);
+INSERT INTO golfsters VALUES (5, "Sand Wedge", 40, "Chicago", 3);
+INSERT INTO golfsters VALUES (6, "Chipper", 100, "Seattle", 13);
+INSERT INTO golfsters VALUES (7, "Ultra Lob Wedge", 34, "Austin", 8);
+INSERT INTO golfsters VALUES (8, "Brassie", 29, "Chicago", 10);
+INSERT INTO golfsters VALUES (9, "Gap Wedge", 56, "Boston", 16);
+INSERT INTO golfsters VALUES (10, "Lob Wedge", 64, "Seattle", 4);
+INSERT INTO golfsters VALUES (11, "Niblick", 158, "Boston", 0);
+INSERT INTO golfsters VALUES (12, "Cleek", 400, "Chicago", 5);
+INSERT INTO golfsters VALUES (13, "Irons", 45, "Boston", 93);
+INSERT INTO golfsters VALUES (14, "Pitching Wedge", 109, "Austin", 4);
+INSERT INTO golfsters VALUES (15, "Spade Mashie", 68, "Chicago", 7);
+
+--display the database ordered by price.
+SELECT * FROM golfsters WHERE cost <80 ORDER BY quantity asc;
+
+--display the sum cost of items 
+SELECT SUM(cost) FROM golfsters;
+
+--display what the sum cost is per location
+SELECT location, SUM(quantity) FROM golfsters GROUP BY location;
+
+
